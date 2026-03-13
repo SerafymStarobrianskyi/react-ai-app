@@ -21,10 +21,6 @@ app.get("/", (req, res) => {
   res.send("Backend is running");
 });
 
-app.get("/healthz", (req, res) => {
-  res.send("ok");
-});
-
 app.post("/api/chat", async (req, res) => {
   console.log("POST /api/chat called");
   if (!process.env.OLLAMA_API_KEY) {
