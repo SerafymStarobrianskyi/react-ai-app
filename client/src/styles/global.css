@@ -1,0 +1,55 @@
+:root {
+  --bg-main: #0b0f14;
+  --bg-secondary: #0f1724;
+  --bg-user: #132033;
+  --bg-button: #132033;
+  --bg-clear: #263d60;
+
+  --border-color: #1b2633;
+
+  --text-main: #e8eef6;
+  --text-muted: 0.7;
+
+  --radius: 10px;
+  --radius-lg: 12px;
+
+  --container-width: 900px;
+
+  --padding-main: 16px;
+  --gap-main: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, Arial;
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+.app {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  padding: 12px 14px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  background: var(--bg-button);
+  color: var(--text-main);
+  cursor: pointer;
+}
+
+.button:disabled,
+.input:disabled,
+.clear:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

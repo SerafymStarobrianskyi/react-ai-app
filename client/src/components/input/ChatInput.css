@@ -1,0 +1,30 @@
+.composer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid var(--border-color);
+  background: var(--bg-main);
+}
+
+.form-container {
+  width: 100%;
+  max-width: var(--container-width);
+  display: flex;
+  gap: 10px;
+  padding: var(--padding-main);
+}
+
+.input {
+  resize: none;
+  min-height: 40px;
+  max-height: 120px;
+  flex: 1;
+  padding: 12px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  background: var(--bg-secondary);
+  color: var(--text-main);
+}
