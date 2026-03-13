@@ -7,7 +7,16 @@ import cors from "cors";
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+    methods: ["GET", "POST", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+  }),
+);
+
+app.options("*", cors());
+
 app.use(express.json());
 
 app.get("/", (req, res) => {
@@ -18,9 +27,11 @@ app.get("/healthz", (req, res) => {
   res.send("ok");
 });
 
-
 app.post("/api/chat", async (req, res) => {
   console.log("POST /api/chat called");
+  if (!process.env.OLLAMA_API_KEY) {
+    console.error("Missing OLLAMA_API_KEY");
+  }
   try {
     const response = await fetch("https://ollama.com/api/chat", {
       method: "POST",
