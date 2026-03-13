@@ -20,6 +20,7 @@ app.get("/healthz", (req, res) => {
 
 
 app.post("/api/chat", async (req, res) => {
+  console.log("POST /api/chat called");
   try {
     const response = await fetch("https://ollama.com/api/chat", {
       method: "POST",
